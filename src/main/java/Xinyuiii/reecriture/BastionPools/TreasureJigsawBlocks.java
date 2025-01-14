@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class TreasureJigsawBlocks {
-    public static final HashMap<String, List<JigsawBlock>> JIGSAW_BLOCKS = new HashMap<>() {
+    public static final HashMap<String, List<JigsawBlock>> JIGSAW_BLOCKS = new HashMap() {
         private static final long serialVersionUID = -5307620017442262628L;
         {
             this.putAll(MobsJigsawBlocks.JIGSAW_BLOCKS);

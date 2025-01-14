@@ -1,6 +1,7 @@
 package Xinyuiii.properties;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import Xinyuiii.reecriture.NewDecoratorRandom;
 import com.seedfinding.mccore.rand.ChunkRand;
@@ -195,16 +196,20 @@ public class BastionGenerator {
         return goldPositions.stream().map(pos -> {
             rand.setPositionSeed(pos.getFirst(), this.version);
             return rand.nextFloat() < pos.getSecond() ? null : pos.getFirst();
-        }).filter(Objects::nonNull).toList();
+        }).filter(Objects::nonNull).collect(Collectors.toList());
     }
 
     public int getFixedGoldBlocks() {
-        return switch (type) {
-            case HOUSING -> 17;//9bottom, 3middle, 4leftTower, 1leftTowerMiddle
-            case STABLES -> 0;
-            case TREASURE -> 4 + getTreasureBottomGoldBlocks();//2bridge, 2chestRoom, bottom
-            case BRIDGE -> 16;//16chalice
-        };
+        switch (type){
+            case HOUSING:
+                return 17;
+            case STABLES:
+                return 0;
+            case TREASURE:
+                return 4 + getTreasureBottomGoldBlocks();
+            default:
+                return 16;
+        }
     }
 
     public int getTotalGoldIngots() {
@@ -496,7 +501,7 @@ public class BastionGenerator {
         }
     }
 
-    public static final EnumMap<BastionType, String> TYPE_TO_START = new EnumMap<>(BastionType.class) {{
+    public static final EnumMap<BastionType, String> TYPE_TO_START = new EnumMap(BastionType.class) {{
         this.put(BastionType.HOUSING, "units/air_base");
         this.put(BastionType.STABLES, "hoglin_stable/air_base");
         this.put(BastionType.TREASURE, "treasure/big_air_full");

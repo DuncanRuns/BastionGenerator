@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MobsJigsawBlocks {
-    public static final HashMap<String, List<JigsawBlock>> JIGSAW_BLOCKS = new HashMap<>() {
+    public static final HashMap<String, List<JigsawBlock>> JIGSAW_BLOCKS = new HashMap() {
         private static final long serialVersionUID = -5883058025568056692L;
         {
             this.put("blocks/air", Collections.singletonList(

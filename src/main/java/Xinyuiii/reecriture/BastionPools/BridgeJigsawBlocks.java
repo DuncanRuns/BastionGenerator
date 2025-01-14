@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BridgeJigsawBlocks {
-    public static final HashMap<String, List<JigsawBlock>> JIGSAW_BLOCKS = new HashMap<>() {
+    public static final HashMap<String, List<JigsawBlock>> JIGSAW_BLOCKS = new HashMap() {
         private static final long serialVersionUID = -2323373856562970371L;
 
         {

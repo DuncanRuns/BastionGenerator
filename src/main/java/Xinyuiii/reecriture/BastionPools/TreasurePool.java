@@ -9,7 +9,7 @@ import java.util.EnumMap;
 import java.util.List;
 
 public class TreasurePool {
-    public static final EnumMap< PoolType, Pair<PoolType, List<Pair<String, Integer>>> > BASTION_POOLS = new EnumMap<>(PoolType.class) {
+    public static final EnumMap< PoolType, Pair<PoolType, List<Pair<String, Integer>>> > BASTION_POOLS = new EnumMap(PoolType.class) {
         private static final long serialVersionUID = -3976265110983243212L;
         {
             put(PoolType.TREASURE_STARTERS,new Pair<>(PoolType.EMPTY, Collections.singletonList(
